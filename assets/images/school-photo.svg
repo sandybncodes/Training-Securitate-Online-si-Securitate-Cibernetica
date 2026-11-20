@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="sp-title sp-desc">
+  <title id="sp-title">Fotografie fictivă de la o activitate școlară</title>
+  <desc id="sp-desc">Ilustrație fictivă, fără chipuri reale: elevi în fața unei clădiri școlare cu o pancartă cu numele școlii, un indicator de stradă și un marcaj cu data și ora.</desc>
+  <defs>
+    <linearGradient id="spSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fc7ec"/>
+      <stop offset="1" stop-color="#e3f3fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#spSky)"/>
+  <!-- building -->
+  <rect x="60" y="110" width="520" height="290" fill="#c9795a"/>
+  <rect x="60" y="100" width="520" height="22" fill="#9c5a41"/>
+  <g fill="#f1e6c8">
+    <rect x="100" y="210" width="70" height="80"/><rect x="200" y="210" width="70" height="80"/>
+    <rect x="370" y="210" width="70" height="80"/><rect x="470" y="210" width="70" height="80"/>
+  </g>
+  <rect x="285" y="250" width="70" height="150" fill="#6b4a38"/>
+  <!-- banner with school name -->
+  <rect x="150" y="135" width="340" height="52" rx="6" fill="#ffffff"/>
+  <text x="320" y="171" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#17335e">ȘCOALA EXEMPLU</text>
+  <!-- ground -->
+  <rect y="400" width="800" height="200" fill="#8fb26a"/>
+  <rect y="400" width="800" height="70" fill="#cfcfc8"/>
+  <!-- street sign -->
+  <rect x="676" y="250" width="10" height="190" fill="#4a5463"/>
+  <rect x="610" y="230" width="150" height="48" rx="6" fill="#1d4fd1"/>
+  <text x="685" y="262" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Str. Exemplului</text>
+  <!-- children (faceless) -->
+  <g>
+    <rect x="170" y="400" width="70" height="120" rx="28" fill="#3b82c4"/><circle cx="205" cy="380" r="28" fill="#e8c39e"/>
+    <rect x="260" y="410" width="66" height="116" rx="26" fill="#e9a23b"/><circle cx="293" cy="391" r="27" fill="#c99a73"/>
+    <rect x="350" y="396" width="72" height="126" rx="28" fill="#2a9d8f"/><circle cx="386" cy="375" r="29" fill="#f0d2b4"/>
+    <rect x="445" y="408" width="68" height="118" rx="27" fill="#c45a8a"/><circle cx="479" cy="389" r="27" fill="#d9ad85"/>
+    <rect x="535" y="400" width="70" height="122" rx="28" fill="#8a6fc4"/><circle cx="570" cy="380" r="28" fill="#e8c39e"/>
+  </g>
+  <!-- date / time stamp -->
+  <rect x="520" y="548" width="260" height="38" rx="6" fill="#000000" opacity="0.55"/>
+  <text x="650" y="575" text-anchor="middle" font-family="Consolas, monospace" font-size="24" font-weight="700" fill="#ffb347">14.05 · 10:32</text>
+</svg>

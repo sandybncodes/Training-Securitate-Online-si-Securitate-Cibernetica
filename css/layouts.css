@@ -1,0 +1,490 @@
+/* ==========================================================================
+   LAYOUTS — slide types for the SIGNAL / NOISE design system.
+   All measurements are px on the fixed 1920x1080 canvas (scaled by slide-engine.js).
+   Slides opt in with `.slide-v2` + one theme + one layout class.
+   ========================================================================== */
+
+/* ---------- Themes ---------- */
+.slide-v2 {
+  background: var(--slide-bg, var(--ink));
+  color: var(--fg, var(--text-on-dark));
+  border: 0;
+  border-radius: 0;
+}
+
+.theme-ink,
+.on-ink {
+  --slide-bg: var(--ink);
+  --fg: var(--text-on-dark);
+  --fg-muted: var(--text-muted);
+  --line: var(--line-dark);
+  --text: var(--text-on-dark);
+  --muted: var(--text-muted);
+  --accent: var(--cyan);
+  --accent-soft: rgba(102, 217, 232, 0.12);
+  --warn: var(--alert);
+  --warn-soft: rgba(242, 166, 90, 0.12);
+  --bad: var(--danger);
+  --bad-soft: rgba(228, 94, 101, 0.14);
+  --good: var(--safe);
+  --good-soft: rgba(75, 175, 139, 0.14);
+  --panel: rgba(255, 255, 255, 0.05);
+  --on-accent: var(--ink);
+}
+
+.theme-paper,
+.theme-warm,
+.on-paper {
+  --slide-bg: var(--paper);
+  --fg: #0e1420;
+  --fg-muted: #4a5463;
+  --line: var(--line-light);
+  --text: #0e1420;
+  --muted: #4a5463;
+  --accent: #1d4fd1;
+  --accent-soft: rgba(29, 79, 209, 0.09);
+  --warn: #9a4b00;
+  --warn-soft: rgba(154, 75, 0, 0.1);
+  --bad: #b3202a;
+  --bad-soft: rgba(179, 32, 42, 0.09);
+  --good: #0d7050;
+  --good-soft: rgba(13, 112, 80, 0.1);
+  --panel: #ffffff;
+  --on-accent: #ffffff;
+}
+
+.theme-warm {
+  --slide-bg: #f2eadf;
+  --panel: #fbf7f1;
+}
+
+.on-paper {
+  background: var(--paper);
+  color: var(--fg);
+}
+
+.on-ink {
+  background: var(--ink);
+  color: var(--fg);
+}
+
+/* ---------- Safe-area frame (6% horizontal, ~7% top) ---------- */
+.slide-v2 .v2-frame {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  height: 100%;
+  padding: 72px 112px 64px;
+}
+
+.v2-header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  color: var(--fg-muted);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sim-tag {
+  padding: 6px 18px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Type scale ---------- */
+.eyebrow {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.display-xl {
+  font-size: 132px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.display-m {
+  font-size: 76px;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.body-l {
+  font-size: 36px;
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Layout: hero statement / cinematic ---------- */
+.layout-hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(760px 640px at 76% 60%, rgba(140, 172, 255, 0.2), transparent 70%),
+    radial-gradient(1500px 900px at 40% 130%, rgba(24, 34, 54, 0.85), transparent 70%),
+    var(--ink);
+}
+
+.layout-hero .hero-frame {
+  justify-content: space-between;
+}
+
+.layout-hero .hero-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1080px;
+}
+
+.layout-hero .display-xl .line {
+  display: block;
+}
+
+.layout-hero .display-xl .line-2 {
+  margin-top: 36px;
+  font-size: 68px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgba(245, 247, 250, 0.82);
+}
+
+.layout-hero .hero-foot {
+  flex: none;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* ---------- Layout: evidence (copy + large simulated artefact) ---------- */
+.layout-evidence .evidence-grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 760px;
+  column-gap: 96px;
+}
+
+.layout-evidence .evidence-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-height: 0;
+}
+
+.layout-evidence .evidence-device {
+  align-self: start;
+  justify-self: end;
+}
+
+/* ---------- Layout: diagram reveal (artefact left, explanation right) ---------- */
+.layout-diagram .diagram-grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 96px;
+}
+
+.layout-diagram .diagram-left,
+.layout-diagram .diagram-right {
+  position: relative;
+  min-height: 0;
+}
+
+.layout-diagram .diagram-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==========================================================================
+   Shared structure for the full-deck layouts
+   ========================================================================== */
+.display-l {
+  font-size: 104px;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.display-s {
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.body-m {
+  font-size: 36px;
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.split {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 96px;
+}
+
+.split--5-7 { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.split--7-5 { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.split--4-8 { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+
+.col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  gap: 32px;
+}
+
+.col--center { justify-content: center; }
+.col--end { justify-content: flex-end; }
+.mt-auto { margin-top: auto; }
+
+.pill {
+  display: inline-block;
+  padding: 6px 20px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Selected / hidden panels driven by data-select groups */
+[data-sel-panel] { display: none; }
+[data-sel-panel].is-selected {
+  display: block;
+  animation: fade-in var(--motion-base) var(--ease-standard) both;
+}
+
+/* ---------- Challenge (S02): big question + audience options ---------- */
+.rows { display: flex; flex-direction: column; justify-content: center; }
+
+.row-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: center;
+  padding: 30px 0;
+  border-top: 2px solid var(--line);
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.row-item:last-child { border-bottom: 2px solid var(--line); }
+
+.row-key {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.verdict-line {
+  flex: none;
+  padding-top: 28px;
+  border-top: 6px solid var(--accent);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ---------- Questions (S03) ---------- */
+.q-list { display: flex; flex-direction: column; justify-content: center; }
+
+.q-item {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  align-items: baseline;
+  padding: 34px 0;
+  border-top: 2px solid var(--line);
+}
+
+.q-num { font-size: 76px; font-weight: 800; line-height: 1; color: var(--accent); }
+.q-text { font-size: 56px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+.q-item.is-revealed:not(.is-current) { opacity: 0.55; }
+
+/* ---------- Video (S01A) ---------- */
+.layout-video .video-wrap {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-video .slide-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  border-radius: 12px;
+}
+
+/* ---------- Statement (S04, S22) ---------- */
+.layout-statement .statement-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 64px;
+}
+
+.statement {
+  font-size: 96px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.statement .mark {
+  padding: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.12em;
+  text-decoration-color: var(--accent);
+}
+
+.statement-sub {
+  max-width: 1320px;
+  padding-left: 36px;
+  border-left: 6px solid var(--accent);
+  font-size: 44px;
+  line-height: 1.35;
+  color: var(--fg-muted);
+}
+
+/* ---------- Contrast (S05, S17, S21) ---------- */
+.contrast {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.c-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 52px 64px;
+}
+
+.c-panel.on-ink { background: var(--ink-soft); }
+.c-panel .eyebrow { color: var(--accent); }
+.c-title { font-size: 72px; line-height: 1.05; font-weight: 800; letter-spacing: -0.03em; }
+.c-def { font-size: 38px; line-height: 1.4; color: var(--fg-muted); }
+.c-keys { display: flex; flex-wrap: wrap; gap: 14px; margin-top: auto; }
+.c-key { padding: 10px 24px; border: 2px solid var(--line); border-radius: 999px; font-size: 30px; font-weight: 600; }
+
+.bridge {
+  flex: none;
+  padding-top: 26px;
+  border-top: 6px solid var(--accent);
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.perm-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+
+.open-cols {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 120px;
+  align-content: start;
+}
+
+/* ---------- Radial (S06) ---------- */
+.layout-radial .split { align-items: center; }
+.radial { position: relative; width: 860px; height: 800px; justify-self: end; }
+.r-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+
+/* ---------- Tabs (S07, S23) ---------- */
+.tabs-grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 560px minmax(0, 1fr);
+  column-gap: 96px;
+  align-items: start;
+}
+
+.tab-list { display: flex; flex-direction: column; gap: 16px; }
+
+/* ---------- Sequence (S08, S13, S16) ---------- */
+.layout-sequence .seq-body { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 64px; }
+.chain { display: flex; align-items: stretch; }
+.lane { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: center; column-gap: 32px; }
+.lanes { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 56px; }
+.path { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+/* ---------- Trio (S09) ---------- */
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 56px; align-items: start; }
+.trio-item { display: flex; flex-direction: column; gap: 24px; }
+
+/* ---------- Collage (S11) ---------- */
+.collage {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: 28px 32px;
+  align-content: start;
+}
+
+.collage .span-5 { grid-column: span 5; }
+.collage .span-7 { grid-column: span 7; }
+.collage .span-3 { grid-column: span 3; }
+
+/* ---------- Closing (S34) ---------- */
+.closing-title { font-size: 140px; line-height: 1.02; font-weight: 800; letter-spacing: -0.035em; }

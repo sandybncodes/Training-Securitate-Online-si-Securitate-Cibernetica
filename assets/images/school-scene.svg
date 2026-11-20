@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" role="img" aria-labelledby="ss-title ss-desc">
+  <title id="ss-title">Clasă luminoasă</title>
+  <desc id="ss-desc">Ilustrație stilizată, fără chipuri: o profesoară lângă tablă și patru elevi la bănci, unul dintre ei cu o tabletă.</desc>
+  <rect width="1000" height="720" fill="#f6e9d6"/>
+  <rect y="540" width="1000" height="180" fill="#d9b78f"/>
+  <rect y="530" width="1000" height="14" fill="#c49a6c"/>
+  <!-- window -->
+  <rect x="60" y="70" width="240" height="260" rx="10" fill="#c79a64"/>
+  <rect x="76" y="86" width="208" height="228" rx="4" fill="#bfe0ee"/>
+  <path d="M180 86v228M76 200h208" stroke="#c79a64" stroke-width="10"/>
+  <circle cx="232" cy="136" r="26" fill="#ffe08a"/>
+  <!-- board -->
+  <rect x="420" y="70" width="520" height="260" rx="10" fill="#b07d4a"/>
+  <rect x="436" y="86" width="488" height="228" rx="4" fill="#2f5d50"/>
+  <path d="M470 140h200M470 190h300M470 240h160" stroke="#e8f1ee" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="820" cy="190" r="48" fill="none" stroke="#e8f1ee" stroke-width="8" opacity="0.85"/>
+  <path d="M800 190l14 14 28-30" fill="none" stroke="#e8f1ee" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <!-- teacher -->
+  <rect x="345" y="340" width="82" height="200" rx="34" fill="#c45a3a"/>
+  <circle cx="386" cy="300" r="36" fill="#e8c39e"/>
+  <path d="M350 296c4-40 70-40 72 0-18-14-54-14-72 0z" fill="#5a3a2a"/>
+  <!-- children -->
+  <g>
+    <rect x="205" y="395" width="90" height="100" rx="32" fill="#3b82c4"/>
+    <circle cx="250" cy="358" r="34" fill="#e8c39e"/>
+    <rect x="425" y="395" width="90" height="100" rx="32" fill="#2a9d8f"/>
+    <circle cx="470" cy="358" r="34" fill="#c99a73"/>
+    <rect x="645" y="395" width="90" height="100" rx="32" fill="#e9a23b"/>
+    <circle cx="690" cy="358" r="34" fill="#f0d2b4"/>
+    <rect x="845" y="395" width="90" height="100" rx="32" fill="#8a6fc4"/>
+    <circle cx="890" cy="358" r="34" fill="#d9ad85"/>
+  </g>
+  <!-- desks -->
+  <g fill="#b88353">
+    <rect x="150" y="480" width="200" height="22" rx="6"/>
+    <rect x="370" y="480" width="200" height="22" rx="6"/>
+    <rect x="590" y="480" width="200" height="22" rx="6"/>
+    <rect x="800" y="480" width="190" height="22" rx="6"/>
+  </g>
+  <g fill="#8c5f37">
+    <rect x="170" y="502" width="14" height="38"/><rect x="316" y="502" width="14" height="38"/>
+    <rect x="390" y="502" width="14" height="38"/><rect x="536" y="502" width="14" height="38"/>
+    <rect x="610" y="502" width="14" height="38"/><rect x="756" y="502" width="14" height="38"/>
+    <rect x="820" y="502" width="14" height="38"/><rect x="956" y="502" width="14" height="38"/>
+  </g>
+  <!-- tablet on second desk -->
+  <rect x="428" y="450" width="84" height="32" rx="6" fill="#1d4fd1"/>
+  <rect x="436" y="456" width="68" height="20" rx="3" fill="#bcd0ff"/>
+</svg>

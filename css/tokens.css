@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/vendor/fonts/inter-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/vendor/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Design system: SIGNAL / NOISE (see docs/DESIGN_SYSTEM.md) */
+  --ink: #080b11;
+  --ink-soft: #111722;
+  --paper: #f6f7f9;
+  --white: #ffffff;
+  --text-on-dark: #f5f7fa;
+  --text-muted: #a5adba;
+  --electric: #4f8bff;
+  --cyan: #66d9e8;
+  --alert: #f2a65a;
+  --danger: #e45e65;
+  --safe: #4baf8b;
+  --line-dark: rgba(255, 255, 255, 0.14);
+  --line-light: rgba(10, 20, 35, 0.14);
+
+  /* Motion tokens */
+  --motion-fast: 180ms;
+  --motion-base: 360ms;
+  --motion-slow: 650ms;
+  --motion-hero: 900ms;
+  --ease-standard: cubic-bezier(.22, 1, .36, 1);
+  --ease-exit: cubic-bezier(.4, 0, 1, 1);
+
+  /* Legacy aliases used by the not-yet-redesigned slides */
+  --bg: var(--ink);
+  --bg-elevated: var(--ink-soft);
+  --surface: #172033;
+  --surface-soft: rgba(23, 32, 51, 0.7);
+  --text: var(--text-on-dark);
+  --muted: var(--text-muted);
+  --blue: var(--electric);
+  --warning: var(--alert);
+  --shadow: rgba(2, 6, 14, 0.42);
+  --border: var(--line-dark);
+  --radius-xl: 20px;
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --content-width: 1920px;
+  --header-height: 56px;
+  --footer-height: 64px;
+  --transition: var(--motion-base) var(--ease-standard);
+  --ease: var(--ease-standard);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+  background: var(--ink);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: var(--text);
+}
+
+.slide {
+  color: var(--text);
+}
+
+button,
+.option-card,
+.node,
+.risk-card,
+.message-card,
+.answer-card,
+.quiz-card,
+.feature-box,
+.card,
+svg text,
+svg tspan,
+svg textPath {
+  color: var(--text);
+}
+
+svg text,
+svg tspan,
+svg textPath {
+  fill: currentColor;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.slide-surface {
+  background: linear-gradient(180deg, rgba(17, 26, 43, 0.95), rgba(11, 17, 29, 0.96));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.36);
+}
+
+.card,
+.option-card,
+.risk-card,
+.message-card,
+.feature-box,
+.safety-pair,
+.quiz-card,
+.message-fragment,
+.node,
+.answer-card {
+  background: rgba(23, 35, 56, 0.72);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.text-muted,
+.notes-panel .text-muted {
+  color: var(--muted) !important;
+}
+
+.text-cyan { color: var(--cyan); }
+.text-blue { color: var(--blue); }
+.text-warn { color: var(--warning); }
+.text-danger { color: var(--danger); }
+.text-safe { color: var(--safe); }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(50, 213, 242, 0.35);
+  border-radius: 999px;
+  background: rgba(50, 213, 242, 0.08);
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}

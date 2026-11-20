@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="THE DIGITAL WORLD — Cât de sigur ești că nu poți fi păcălit?"
+    />
+    <title>THE DIGITAL WORLD</title>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/layouts.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/motion.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <span class="brand-kicker">THE DIGITAL WORLD</span>
+          <span class="brand-sub">Cât de sigur ești că nu poți fi păcălit?</span>
+        </div>
+        <div class="topbar-meta">
+          <span id="chapter-label" class="chapter-label">Capitol 1</span>
+          <span id="slide-counter" class="slide-counter">1 / 34</span>
+        </div>
+      </header>
+
+      <main class="deck-wrap">
+        <div id="slide-stage" class="slide-stage"></div>
+      </main>
+
+      <aside id="notes-panel" class="notes-panel is-hidden" aria-live="polite"></aside>
+
+      <footer class="controls-bar">
+        <div class="controls-left">
+          <button id="prev-btn" class="nav-btn" type="button" aria-label="Slide anterior">
+            ← Înapoi
+          </button>
+        </div>
+
+        <div class="progress-wrap" aria-label="Progresul prezentării">
+          <div class="progress-track">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="controls-right">
+          <button id="presenter-btn" class="utility-btn" type="button" aria-pressed="false">
+            Notes
+          </button>
+          <button id="fullscreen-btn" class="utility-btn" type="button" aria-label="Ecran complet">
+            Fullscreen
+          </button>
+          <button id="next-btn" class="nav-btn nav-btn-primary" type="button" aria-label="Slide următor">
+            Înainte →
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/content/helpers.js"></script>
+    <script src="js/content/ro/ch1.js"></script>
+    <script src="js/content/ro/ch2.js"></script>
+    <script src="js/content/ro/ch3.js"></script>
+    <script src="js/content/ro/ch4.js"></script>
+    <script src="js/content/ro/ch5.js"></script>
+    <script src="js/content/ro/ch6.js"></script>
+    <script src="js/content/ro/ch7.js"></script>
+    <script src="js/content/ro.js"></script>
+    <script src="js/slide-engine.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

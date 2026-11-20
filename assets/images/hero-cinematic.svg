@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Cinematic dark digital background</title>
+  <desc id="desc">A stylized scene with a person and glowing smartphone in a dark environment.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172b" />
+      <stop offset="55%" stop-color="#0a1220" />
+      <stop offset="100%" stop-color="#050b14" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" x2="1">
+      <stop offset="0%" stop-color="#32d5f2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#477bff" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="600" cy="180" r="210" fill="url(#glow)" opacity="0.7"/>
+  <circle cx="620" cy="210" r="120" fill="#32d5f2" opacity="0.2"/>
+  <g opacity="0.85">
+    <rect x="510" y="120" width="120" height="200" rx="24" fill="#111A2B" stroke="#32d5f2" stroke-width="2"/>
+    <rect x="532" y="150" width="76" height="125" rx="12" fill="#080d18"/>
+    <circle cx="570" cy="190" r="28" fill="#32d5f2" opacity="0.8"/>
+    <rect x="548" y="230" width="44" height="8" rx="4" fill="#32d5f2" opacity="0.8"/>
+  </g>
+  <g>
+    <circle cx="260" cy="205" r="75" fill="#1a273d"/>
+    <path d="M220 325 L270 230 L330 325 Z" fill="#d9e5f6" opacity="0.82"/>
+    <rect x="240" y="300" width="120" height="90" rx="18" fill="#d9e5f6" opacity="0.32"/>
+    <path d="M200 390 C250 360, 290 360, 330 390 L330 470 L200 470 Z" fill="#0d1828"/>
+  </g>
+  <g opacity="0.25">
+    <path d="M0 540 C140 450, 240 500, 400 430 S660 360, 800 470 L800 600 L0 600 Z" fill="#0f2035"/>
+  </g>
+</svg>

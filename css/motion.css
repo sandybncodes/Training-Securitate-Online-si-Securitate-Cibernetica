@@ -1,0 +1,93 @@
+/* ==========================================================================
+   MOTION — hero entrance, step reveal and reduced-motion handling.
+   Motion explains cause/effect; it never decorates. Tokens come from tokens.css.
+   ========================================================================== */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- Hero entrance (S01): headline, then second line, then notification ---------- */
+.layout-hero .hero-bg {
+  animation: fade-in 1200ms var(--ease-standard) both;
+}
+
+.layout-hero .v2-header,
+.layout-hero .hero-foot {
+  animation: fade-in var(--motion-hero) var(--ease-standard) 200ms both;
+}
+
+.layout-hero .display-xl .line-1 {
+  animation: rise-in var(--motion-hero) var(--ease-standard) 300ms both;
+}
+
+.layout-hero .display-xl .line-2 {
+  animation: rise-in var(--motion-hero) var(--ease-standard) 1500ms both;
+}
+
+.layout-hero .hero-phone {
+  animation: fade-in var(--motion-hero) var(--ease-standard) 400ms both;
+}
+
+.layout-hero .notification {
+  animation: rise-in var(--motion-slow) var(--ease-standard) 2400ms both;
+}
+
+/* ---------- Step reveal (see js/reveal.js) ----------
+   data-step="N"        : element appears when the slide reaches step N.
+   data-step-until="N"  : element disappears when the slide reaches step N. */
+.rv {
+  transition:
+    opacity var(--motion-base) var(--ease-standard),
+    transform var(--motion-base) var(--ease-standard),
+    visibility 0s linear 0s;
+}
+
+.rv[data-step]:not(.is-revealed) {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition:
+    opacity var(--motion-fast) var(--ease-exit),
+    transform var(--motion-fast) var(--ease-exit),
+    visibility 0s linear var(--motion-fast);
+}
+
+.rv[data-step-until].is-gone {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  pointer-events: none;
+  transition:
+    opacity var(--motion-fast) var(--ease-exit),
+    transform var(--motion-fast) var(--ease-exit),
+    visibility 0s linear var(--motion-fast);
+}
+
+.t-link.rv { transition-delay: 0ms, 0ms, 0s; }
+.t-assistant.rv { transition-delay: 120ms, 120ms, 0s; }
+
+/* ---------- Reduced motion: no animation, no delayed content ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .slide-v2,
+  .slide-v2 *,
+  .slide-v2 *::before,
+  .slide-v2 *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
